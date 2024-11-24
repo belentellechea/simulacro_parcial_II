@@ -2,6 +2,7 @@ import { StyleSheet, Text, TouchableOpacity} from "react-native";
 
 export default function OrderPlanetsButton({planets, setPlanets}) {
 
+    console.log("planetas", planets)
     const handleOrderPlanets = () => {
         const sortedPlanets = [...planets].sort((a, b) => {
             const moonsA = Number(a.moons);
@@ -11,11 +12,9 @@ export default function OrderPlanetsButton({planets, setPlanets}) {
         setPlanets(sortedPlanets);
     };
     
-    function print() {
-        console.log("planetsas", planets)
-    }
+  
     return (
-        <TouchableOpacity style={styles.button} onPress={print}>
+        <TouchableOpacity style={styles.button} onPress={handleOrderPlanets}>
             <Text style={styles.text}>
                 Order planets
             </Text>  

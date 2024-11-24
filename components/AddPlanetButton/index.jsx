@@ -1,8 +1,11 @@
 import { View, StyleSheet, TouchableOpacity, Text, Platform } from "react-native"
+import { useNavigation } from "@react-navigation/native";
 
 export default function AddPlanetButton(){
+    const navigation = useNavigation();
+
     return (
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Add')}>
             <Text style={styles.text}>
                 {Platform.OS === 'ios' ? "Create planet" : "New planet"}
             </Text>  
